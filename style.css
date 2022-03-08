@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -27,6 +28,7 @@ body {
  width: 100%;
  background-color: var(--nav-color);
  box-shadow: 0 1px 6px 1px gray ;
+ z-index: 99;
 }
 
 #header #header-img {
@@ -65,13 +67,13 @@ nav {
   justify-content: space-between;
 }
 
-section {
+#about {
   padding-top: 130px;
   padding-bottom: 100px; 
   background-color: var(--section-about);
 }
 
-#about .con-title {
+.con-title {
   display: flex;
   justify-content: center;
 }
@@ -87,10 +89,10 @@ section h1 {
 section h1::after {
   content: "";
   position: absolute;
-  width: 40%;
+  width: 100%;
   height: 3px;
   bottom: 0;
-  left: 23px;
+  left: 0;
   background-color: #3903ff;
 }
 
@@ -98,16 +100,124 @@ section p {
   text-align: justify;
   margin: 2.3em 0;
   font-size: 1.1em;
+  max-width: 50%;
 }
 
 .container-section {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
+#produk {
+  padding-top: 130px;
+  padding-bottom: 100px; 
+  background-color: var(--section-produk);
+}
 
-@media screen and (max-width: 900px) {
+#produk p {
+  max-width: 100%;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.container-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill, minmax(256px, 1fr)
+  );
+  gap:30px;
+}
+
+.card-item {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  line-height: 2.3rem;
+  background-color: white;
+  box-shadow: 0 3px 4px 2px gray;
+}
+
+.card-item .box-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-item img {
+  width: 70%;
+}
+
+.card-item .box-flex h3 {
+  font-size: 2.5rem;
+}
+
+.card-item h4 {
+  font-weight: 400;
+}
+
+.card-item span {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: cyan;
+}
+
+.con-button button {
+  padding: 10px;
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#contact {
+  padding-top: 130px;
+  padding-bottom: 100px; 
+  background-color: var(--section-contact);
+}
+
+#contact p {
+  max-width: 100%;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+#contact form {
+  text-align: center;
+  line-height: 2.6rem;
+}
+
+form #email {
+  width: 75%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.submit {
+  margin: 20px 0;
+}
+
+form #submit {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  color: white;
+  background-color: green;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.3em;
+  padding: 15px;
+  color: white;
+  background-color: var(--nav-color);
+}
+
+@media screen and (max-width: 990px) {
   .flex-nav {
     flex-direction: column ;
   }
@@ -115,6 +225,29 @@ section p {
   #nav-bar ul {
     flex-direction: column;
   }
+
+  .container-section {
+    flex-direction: column;
+  }
+
+  #about, #produk , #contact {
+    padding-top: 273px;
+  }
+
+  section p {
+    max-width: 100%;
+  }
+
+  #about .video {
+    max-width: 420px;
+    height: 315px;
+  }
+
+  #about #video {
+    width: 100%;
+    height: auto;
+  }
+
 }
 
 
